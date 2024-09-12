@@ -1,5 +1,8 @@
 package com.ft.strings;
 
+import org.apache.commons.lang3.StringUtils;
+
+
 public class StringsMethods {
 
     public static void main(String[] args) {
@@ -30,6 +33,26 @@ public class StringsMethods {
         System.out.println(s3.replaceAll("[A-Za-z]", ""));
         System.out.println(s3.replaceAll("[^A-Za-z0-9]", ""));
 
-        System.out.println(s3.replaceAll("$","!")); // need to check
+        System.out.println(s3.replaceAll("\\$","!"));
+        System.out.println(s3.replace("$","!"));
+
+        String s4 = "           Mobile Automation ";
+        String s5 = "Mobile Automation";
+        System.out.println(s4 == s5);
+        System.out.println(s4.equals(s5));
+        String s6 = s4.trim();
+        System.out.println(s6.length());
+        System.out.println(s5.length());
+        System.out.println( s6.equals(s5));
+
+
+        char[] ch = {'A','p','p','i','u','m'};
+        String s7 = new String(ch);
+        System.out.println(s7);
+
+        String s9 = "           Mobile Automation ";
+        System.out.println(s9.length());
+        System.out.println(StringUtils.normalizeSpace(s9).length());
+        System.out.println(StringUtils.normalizeSpace(s9) == s5);// false
     }
 }
