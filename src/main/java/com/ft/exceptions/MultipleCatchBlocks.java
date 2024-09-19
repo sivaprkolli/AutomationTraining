@@ -29,4 +29,15 @@ public class MultipleCatchBlocks {
             System.out.println("Exception");
         }
     }
+
+    public void multipleExceptionInSameCatchBlock(){
+        try{
+            int a=5;
+            int b = a/0; // ArithmeticException
+            int[] c = {1,2,4};
+            System.out.println(c[5]); // ArrayIndexOutOfBoundsException
+        }catch (ArithmeticException | IndexOutOfBoundsException exception){
+            System.out.println(exception.toString());
+        }
+    }
 }
