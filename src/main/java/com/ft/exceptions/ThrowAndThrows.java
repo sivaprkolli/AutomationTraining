@@ -18,7 +18,6 @@ public class ThrowAndThrows {
             e.printStackTrace();
         }
         getFile1();
-
     }
 
     public static void useThrowKeyWord() {

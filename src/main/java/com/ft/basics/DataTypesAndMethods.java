@@ -30,9 +30,7 @@ public class DataTypesAndMethods {
         System.out.println(dataTypesAndMethods.c1);
         System.out.println(dataTypesAndMethods.b2);
         System.out.println(dataTypesAndMethods.f1);
-
     }
-
 
     public void test2(){
         System.out.println("Testing");
