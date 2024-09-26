@@ -12,6 +12,7 @@ public class UnderstandingCollectionFramework {
         String ss = new String("Selenium");
 
         int[] a = {1,2,3,4,5};
+        System.out.println(a.length);
 
         int[] b = new int[5];
 
@@ -31,6 +32,8 @@ public class UnderstandingCollectionFramework {
         String[] d = {"Selenium", "Appium", "WebDriverIO", "Playwright"};
         String[] e = new String[5];
         e[0] = "Selenium";
+        e[1] = "Appium";
+        System.out.println(e.length);
 
         System.out.println(e[4]);
 
