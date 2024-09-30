@@ -42,12 +42,15 @@ public class ArrayListTest {
         list2.add(7);
        // list2.remove(6);
 
-
         List<String> list = new ArrayList<>();
         list.add("Selenium");
         list.add("Playwright");
         list.add("WebDriverIO");
         list.add( "Appium");
+        list.add("Selenium");
+        list.add("Selenium");
+        list.add("Selenium");
+        list.add("Selenium");
 
         /*System.out.println(list);
         list.add(0, "RestAssured");

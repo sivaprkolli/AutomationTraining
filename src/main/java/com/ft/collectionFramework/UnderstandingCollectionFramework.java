@@ -1,7 +1,8 @@
 package com.ft.collectionFramework;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import com.microsoft.schemas.office.visio.x2012.main.SectionType;
+
+import java.util.*;
 
 public class UnderstandingCollectionFramework {
 
@@ -50,7 +51,7 @@ public class UnderstandingCollectionFramework {
         System.out.println(collection);
 
         for (Object i : collection){
-            System.out.println((Double) i);
+            System.out.println((Integer) i);
         }
 
         Collection<Integer> collection1 = new ArrayList();
@@ -64,7 +65,15 @@ public class UnderstandingCollectionFramework {
         }
 
 
+        Set set = new HashSet();
+        Set set1 = new LinkedHashSet();
 
+        set.add("Selenium");
+        set.add("Playwright");
+        set.add("WebDriverIO");
+        set.add( "Appium");
+
+        System.out.println(set);
 
 
 
