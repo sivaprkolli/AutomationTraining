@@ -11,6 +11,7 @@ public class GenericsTest<T> {
         GenericsTest<Integer> genericsTest = new GenericsTest<Integer>();
         GenericsTest<String> genericsTest1 = new GenericsTest<String>();
         GenericsTest<Double> genericsTest2 = new GenericsTest<Double>();
+
         GenericsTest genericsTest3 = new GenericsTest();
         GenericsTest genericsTest4 = new GenericsTest();
         genericsTest.t = 10;

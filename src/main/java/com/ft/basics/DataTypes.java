@@ -41,6 +41,19 @@ public class DataTypes {
         boolean b = dataTypes.decide();
         System.out.println(b);
         System.out.println(dataTypes.total());
+
+
+        int a = 5;
+        double d1 = 4.6;
+        String s6 = String.valueOf(d1);
+        int b5 = Integer.parseInt(s6);
+        int d5 = Integer.valueOf(s6);
+
+        double d2 = Double.parseDouble(s6);
+        char[] c4 = {'a','b'};
+        String s7 = String.valueOf(c4);
+
+
     }
 
 }
