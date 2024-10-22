@@ -3,8 +3,7 @@ package com.ft.testNG;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests {
-
+public class LoginTests extends AnnotationsInTestNG{
 
     @Test(priority = 1)
     public void verifyLoginSuccess(){

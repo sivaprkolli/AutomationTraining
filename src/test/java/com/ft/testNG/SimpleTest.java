@@ -3,7 +3,7 @@ package com.ft.testNG;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SimpleTest {
+public class SimpleTest extends AnnotationsInTestNG{
 
     // Automation Framework
     // Test Automation Framework - TestNG
