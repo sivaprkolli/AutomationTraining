@@ -15,5 +15,7 @@ public class Child extends Parent {
         int b = parent.a;
         parent.test1();
         Parent.test2();
+
+        //parent1.test1();
     }
 }

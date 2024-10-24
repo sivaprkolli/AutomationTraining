@@ -2,9 +2,10 @@ package com.ft.oops.inheritance;
 
 public class Parent {
     int a=10;
-    static Parent parent;
+    static Parent parent1;
 
     public void test1(){
+        //parent1 = new Parent();
         System.out.println("Test 1");
     }
 
@@ -17,6 +18,6 @@ public class Parent {
     }
 
     public static void main(String[] args) {
-        parent = new Parent();
+        parent1 = new Parent();
     }
 }

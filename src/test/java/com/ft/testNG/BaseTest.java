@@ -2,11 +2,21 @@ package com.ft.testNG;
 
 import org.testng.annotations.*;
 
+import static org.testng.TestRunner.PriorityWeight.priority;
+
 public class BaseTest {
 
     @BeforeSuite
     public void beforeAllAnnotations(){
         System.out.println("beforeAllAnnotations");
+        // WebDriver/Playwright initialization, //browser launch
+        // Report initialization
+        // DB connections
+    }
+
+    @BeforeSuite
+    public void beforeSuite(){
+        System.out.println("beforeSuite");
         // WebDriver/Playwright initialization, //browser launch
         // Report initialization
         // DB connections
