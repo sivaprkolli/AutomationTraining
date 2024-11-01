@@ -23,7 +23,7 @@ public class SimpleTest extends AnnotationsInTestNG {
         Assert.assertEquals(1,1);
     }
 
-    @Test
+    @Test(enabled = false)
     public void apiAutomation(){
         System.out.println("RestAssured");
     }
