@@ -9,6 +9,7 @@
             <exclude name="paymentUpdating"></exclude>
         </run>
     </groups>
+
     <test name="AAA">
         <classes>
             <class name="com.ft.testNG.GroupsTests"></class>

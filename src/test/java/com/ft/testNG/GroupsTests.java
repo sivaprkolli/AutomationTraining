@@ -7,7 +7,9 @@ public class GroupsTests {
 
     @Test(groups = {"registration", "smoke"})
     public void registration1(){
-        System.out.println("Smoke1");
+        System.out.println("registration1");
+        System.out.println(Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getId());
         Assert.assertTrue(false);
     }
 

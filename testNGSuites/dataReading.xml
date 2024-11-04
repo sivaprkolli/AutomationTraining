@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AAA">
+    <parameter name="browser" value="chrome"></parameter>
+    <test name="smoke">
+        <parameter name="appUrl" value="https://www.saucedemo.com/"></parameter>
+        <classes>
+            <class name="com.ft.testNG.ReadDataFromTestNGXMLFile">
+                <parameter name="username" value="standard_user"></parameter>
+                <parameter name="password" value="secret_sauce"></parameter>
+            </class>
+        </classes>
+    </test>
+</suite>
