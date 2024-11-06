@@ -8,7 +8,7 @@ public class DependentOnMethods {
     @Test(priority = 0)
     public void login(){
         System.out.println("Login Success");
-        Assert.assertEquals(1,0);
+        Assert.assertEquals(1,1);
     }
 
     @Test(dependsOnMethods = "login")
@@ -29,5 +29,6 @@ public class DependentOnMethods {
     @Test(dependsOnMethods = "payment")
     public void verifyTicket(){
         System.out.println("Verify Ticket");
+        Assert.assertEquals(1,2);
     }
 }
