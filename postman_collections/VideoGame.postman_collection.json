@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "cac0a0f3-0a7d-4595-9983-fe45dd6c8f8e",
+		"name": "VideoGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6464525",
+		"_collection_link": "https://gold-shadow-517813.postman.co/workspace/FreshersTraining~5dc33e6c-9342-4e1c-8322-024f4db52a3f/collection/6464525-cac0a0f3-0a7d-4595-9983-fe45dd6c8f8e?action=share&source=collection_link&creator=6464525"
+	},
+	"item": [
+		{
+			"name": "GetListOfGames",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/videogame",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAVideoGame",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"FF9\",\n        \"releaseDate\": \"2022-10-01 23:59:59\",\n        \"reviewScore\": 90,\n        \"category\": \"Shooter\",\n        \"rating\": \"Universal\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/videogame",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAVideoGame2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"FF9\",\n        \"releaseDate\": \"2022-10-01 23:59:59\",\n        \"reviewScore\": 90,\n        \"category\": \"Shooter\",\n        \"rating\": \"Universal\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/videogame",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAVideoGame3",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"FF9\",\n        \"releaseDate\": \"2022-10-01 23:59:59\",\n        \"reviewScore\": 90,\n        \"category\": \"Shooter\",\n        \"rating\": \"Universal\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/videogame",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"videogame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"",
+							"console.log(pm.response.json().token)",
+							"pm.collectionVariables.set(\"token\", pm.response.json().token)",
+							"pm.environment.set(\"token\", pm.response.json().token)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"admin\",\n  \"username\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/authenticate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
