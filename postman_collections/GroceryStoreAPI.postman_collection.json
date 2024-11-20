@@ -8,6 +8,173 @@
 	},
 	"item": [
 		{
+			"name": "NegativeTests",
+			"item": [
+				{
+					"name": "GetStatus",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Veirfy status of the API\", ()=> {",
+									"    console.log(pm.response.json())",
+									"    const resp = pm.response.json();",
+									"    pm.expect(resp.status).eql(\"UP\");",
+									"})",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/STATUS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"STATUS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStatusWithInValidResource",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Veirfy status of the API\", ()=> {",
+									"    const resp = pm.response.json();",
+									"    pm.expect(resp.error).eql(\"The resource could not be found. Check your endpoint and request method.\");",
+									"})",
+									"",
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/STATU",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"STATU"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateACart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"cartId\", pm.response.json().cartId)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddItemToCartIdWithIvalidString",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"let invalidString = pm.collectionVariables.get(\"cartIdWithIvalidString\");",
+									"",
+									"pm.test(\"verify error message for invalid String\", ()=> {",
+									"    pm.expect(pm.response.json().error).eql(\"No cart with id \"+invalidString+\".\")",
+									"} )"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"productId\": {{arabicaCoffee}},\n   \"quantity\":5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/carts/:cartId/items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								":cartId",
+								"items"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "{{cartIdWithIvalidString}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "GetStatus",
 			"event": [
 				{
@@ -127,8 +294,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
 							"});",
 							"",
 							"pm.collectionVariables.set(\"cartId\", pm.response.json().cartId)"
@@ -154,7 +321,7 @@
 			"response": []
 		},
 		{
-			"name": "GetCartId",
+			"name": "GetCartIdBefore",
 			"event": [
 				{
 					"listen": "test",
@@ -202,8 +369,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
 							"});",
 							"",
 							"pm.collectionVariables.set(\"itemId\", pm.response.json().itemId)"
@@ -246,7 +413,7 @@
 			"response": []
 		},
 		{
-			"name": "CreateToken",
+			"name": "GetCartIdAfter",
 			"event": [
 				{
 					"listen": "test",
@@ -256,7 +423,61 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
+							"let product = pm.collectionVariables.get(\"arabicaCoffee\");",
+							"",
+							"pm.test(\"Verify productId present\", function () {",
+							"    pm.expect(pm.response.json().items[0].productId).eql(product);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/carts/:cartId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"carts",
+						":cartId"
+					],
+					"variable": [
+						{
+							"key": "cartId",
+							"value": "{{cartId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
 							"pm.collectionVariables.set(\"token\", pm.response.json().accessToken)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -268,7 +489,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \"clientName\": \"siva10\",\n   \"clientEmail\": \"siva10@yopmail.com\"\n}",
+					"raw": "{\n   \"clientName\": \"{{$randomFirstName}}{{$randomBankAccount}}\",\n   \"clientEmail\": \"{{$randomFirstName}}{{$randomBankAccount}}@yopmail.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -296,7 +517,9 @@
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
-							"});"
+							"});",
+							"",
+							"pm.collectionVariables.set(\"orderId\", pm.response.json().orderId)"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -309,7 +532,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "{{token}}",
+							"value": "66d3c8d3e8af33d88a9a52b936d867d8db0acc96e3eca9f001e317d70cccf80d",
 							"type": "string"
 						}
 					]
@@ -332,48 +555,6 @@
 					],
 					"path": [
 						"orders"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{baseUrl}}/api-clients",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.collectionVariables.set(\"token\", pm.response.json().accessToken)"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n   \"clientName\": \"siva12\",\n   \"clientEmail\": \"siva12@yopmail.com\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/api-clients",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"api-clients"
 					]
 				}
 			},
@@ -431,6 +612,15 @@
 		{
 			"key": "token",
 			"value": ""
+		},
+		{
+			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "cartIdWithIvalidString",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
