@@ -1,0 +1,17 @@
+- Parent
+- Child
+- GrandChild - descendant
+- GrandParent - ancestor
+- Siblings - following-sibling , preceding-sibling
+- self
+
+
+Locators:
+- id
+- name
+- className
+- linkText
+- partialLinkText
+- tagName
+- cssSelector
+- xpath
