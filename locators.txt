@@ -15,3 +15,28 @@ Locators:
 - tagName
 - cssSelector
 - xpath
+
+
+Xpath:
+
+//tagName[@attribute='value']
+
+xpath with text():
+
+//span[text()='Enter your first name']
+
+xpath with contains():
+
+//label[contains(text(),'Job Title')]
+//input[contains(@id,'UserEmail')]
+
+xpath with starts-with():
+
+//label[starts-with(@for,'UserPhone')]
+
+
+
+-- following-sibling
+-- preceding-sibling
+-- Parent
+-- Child
