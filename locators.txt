@@ -23,6 +23,7 @@ Xpath:
 
 xpath with text():
 
+//tagName[text()='value']
 //span[text()='Enter your first name']
 
 xpath with contains():
@@ -34,6 +35,43 @@ xpath with starts-with():
 
 //label[starts-with(@for,'UserPhone')]
 
+xpath with normalize-space():
+
+//label[normalize-space()='First name']
+
+Xpath with indexing:
+(//span[@class="error-msg"])[1]
+
+Xpath with and / or conditions:
+
+//span[@class="error-msg" or text()='Enter your first name']
+//span[starts-with(@id,'UserFirstName') and contains(@id,'errMsg')]
+
+
+cssSelector:
+
+tagName[attribute='value']
+[attribute='value']
+
+cssSelector with contains:
+
+input[id*='UserFirstName']
+
+cssSelector with starts-with:
+
+input[id^='UserFirstName']
+
+cssSelector with ends-with:
+
+span[id$='UserFirstName']
+
+cssSelector with id:
+
+#user-name
+
+cssSelector with class:
+
+.form_group
 
 
 -- following-sibling
