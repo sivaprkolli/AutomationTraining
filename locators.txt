@@ -33,6 +33,7 @@ xpath with contains():
 
 xpath with starts-with():
 
+//label[contains(text(),'Job')]
 //label[starts-with(@for,'UserPhone')]
 
 xpath with normalize-space():
@@ -72,6 +73,27 @@ cssSelector with id:
 cssSelector with class:
 
 .form_group
+.submit-button.btn_action
+
+
+
+checkBoxes:
+
+//input[@type="checkbox" and @checked]
+
+traverse to Parent:
+
+//div[text()='4 GB']/../input
+//div[text()='4 GB']/parent::label/input
+//div[text()='4 GB']/preceding-sibling::input
+//div[@title='4 GB']/div/label/input
+//div[@title="4 GB"]/descendant::input
+
+
+
+
+
+
 
 
 -- following-sibling
