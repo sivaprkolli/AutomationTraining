@@ -12,7 +12,9 @@ import org.testng.annotations.Test;
 
 public class FirstTest {
 
-    public void launchBrowser(){
+    public void launchBrowser() {
+
+        //WebDriver chromeDriver1 = new WebDriver();
         WebDriver chromeDriver = new ChromeDriver();
         WebDriver firefoxDriver = new FirefoxDriver();
         WebDriver edgeDriver = new EdgeDriver();
@@ -25,7 +27,7 @@ public class FirstTest {
     }
 
     @Test
-    public void loginToSauceDemo() throws InterruptedException {
+    public void loginToSauceDemo() {
         WebDriver chromeDriver = new ChromeDriver();
         chromeDriver.get("https://www.saucedemo.com/");
         try {
@@ -34,10 +36,9 @@ public class FirstTest {
             chromeDriver.findElement(By.name("password")).sendKeys("secret_sauce");
             Thread.sleep(3000);
             chromeDriver.findElement(By.id("login-button")).click();
-        }catch (NoSuchElementException nse){
-
-        }catch (InvalidSelectorException ise){
-
+        } catch (NoSuchElementException nse) {
+        } catch (InvalidSelectorException ise) {
+        } catch (InterruptedException e) {
         }
         chromeDriver.quit();
     }
