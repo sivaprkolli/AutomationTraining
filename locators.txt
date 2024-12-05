@@ -85,6 +85,12 @@ checkBoxes:
 
 //input[@type="checkbox" and @checked]
 
+
+-- following-sibling
+-- preceding-sibling
+-- Parent
+-- Child
+
 traverse to Parent:
 
 //div[text()='4 GB']/../input
@@ -93,14 +99,14 @@ traverse to Parent:
 //div[@title='4 GB']/div/label/input
 //div[@title="4 GB"]/descendant::input
 
+//div[text()='SAMSUNG']/preceding-sibling::input
+//div[@title="SAMSUNG"]/div/label/input
+
+div[title="SAMSUNG"] > div > label > input
+
+following-sibling in Xpath & css:
+//label[starts-with(@for,'UserLastName')]/following-sibling::span
+label[for^='UserLastName'] + span
 
 
 
-
-
-
-
--- following-sibling
--- preceding-sibling
--- Parent
--- Child

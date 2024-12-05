@@ -38,10 +38,6 @@ public class VerificationMethods {
 
         boolean isSelectedMSAgreementAfterClick = mainServicesAgreementCheckBox.isSelected();
         System.out.println("Before isSelectedMSAgreementAfterClick :: " + isSelectedMSAgreementAfterClick);
-
-
-
-
     }
 
     @AfterClass

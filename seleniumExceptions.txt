@@ -1,0 +1,2 @@
+InvalidSelectorException:
+ Given css selector expression "//button[@name='start my free trial']" is invalid: InvalidSelectorError: Document.querySelector: '//button[@name='start my free trial']' is not a valid selector: "//button[@name='start my free trial']"
