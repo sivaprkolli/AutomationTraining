@@ -34,7 +34,6 @@ public class VerifyErrorMessages {
 
         WebElement jobTitleDropDownErrorMessage = driver.findElement(By.xpath("//span[text()='"+jobTitleErrorMessage+"']"));
         Assert.assertTrue(jobTitleDropDownErrorMessage.isDisplayed());
-
     }
 
     @AfterClass

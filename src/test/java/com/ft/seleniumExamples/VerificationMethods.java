@@ -40,6 +40,26 @@ public class VerificationMethods {
         System.out.println("Before isSelectedMSAgreementAfterClick :: " + isSelectedMSAgreementAfterClick);
     }
 
+
+    @Test
+    public void isElementEnabled() throws InterruptedException {
+        driver = new FirefoxDriver();
+        driver.get("https://www.prettylittlething.com/multi-christmas-tree-bow-oversized-knitted-christmas-jumper.html");
+        driver.manage().window().maximize();
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//button[text()='Accept All']")).click();
+
+        WebElement addToBagButton = driver.findElement(By.id("add-to-bag-button"));
+        boolean getStatusOdAddToBagButton = addToBagButton.isEnabled();
+        System.out.println("getStatusOfAddToBagButton :: " + getStatusOdAddToBagButton);
+        Thread.sleep(2000);
+        WebElement size = driver.findElement(By.xpath("//span[text()='M']"));
+        size.click();
+
+        System.out.println("addToBagButton status :: " + addToBagButton.isEnabled());
+
+    }
+
     @AfterClass
     public void tearDown(){
         driver.quit();
