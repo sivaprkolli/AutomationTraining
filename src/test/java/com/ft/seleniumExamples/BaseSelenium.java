@@ -14,7 +14,8 @@ public class BaseSelenium {
 
     @AfterSuite
     public void killSession(){
-        driver.close();
+        //driver.close();
+        driver.quit();
     }
 
     @BeforeTest

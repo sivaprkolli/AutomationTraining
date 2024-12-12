@@ -1,0 +1,3 @@
+NoAlertPresentException - when no alert
+NoSuchElementException - when element not found
+NoSuchWindowException: Browsing context has been discarded
