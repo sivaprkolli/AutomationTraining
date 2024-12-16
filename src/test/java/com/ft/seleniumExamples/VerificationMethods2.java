@@ -68,7 +68,6 @@ public class VerificationMethods2 extends BaseSelenium{
         Thread.sleep(3000);
         driver.findElement(By.xpath("//button[text()='Accept All']")).click();
 
-
         WebElement addToCartButton = driver.findElement(By.cssSelector("button#add-to-bag-button"));
         System.out.println(addToCartButton.isEnabled());
         Thread.sleep(2000);
