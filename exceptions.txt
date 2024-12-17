@@ -1,3 +1,16 @@
 NoAlertPresentException - when no alert
 NoSuchElementException - when element not found
+org.openqa.selenium.TimeoutException:
+Expected condition failed: waiting for element to be clickable:
+By.xpath: //button[text()='Accept Al'] (tried for 10 second(s) with 500 milliseconds interval)
+
+
+org.openqa.selenium.TimeoutException:
+Expected condition failed: Element not found
+(tried for 10 second(s) with 2000 milliseconds interval)
+
 NoSuchWindowException: Browsing context has been discarded
+
+ElementClickInterceptedException
+ElementNotInteractableException
+NoSuchFrameException: No frame element found by name or id frame-bottom
