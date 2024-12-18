@@ -108,5 +108,14 @@ following-sibling in Xpath & css:
 //label[starts-with(@for,'UserLastName')]/following-sibling::span
 label[for^='UserLastName'] + span
 
+not function in xpath:
+//table[@id='table1']/tbody/tr[1]/td[not(a)]
 
+Tables example:
+
+//table[@id="table1"]/thead/tr/th
+
+//table[@id="table1"]/tbody/tr[1]/td[indexOfEmail]
+
+//span[text()='First Name']/ancestor::table[@id='table1']//tbody/tr/td[text()='Smith']/following-sibling::td
 
