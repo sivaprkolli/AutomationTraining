@@ -29,12 +29,12 @@ public class HandleMouseMovements extends BaseSelenium{
 
         WebElement parentElement = driver.findElement(By.xpath("(//li/a[text()='Industries'])[2]"));
 
-        //WebElement childElement = driver.findElement(By.xpath("(//a[text()='Transportation'])[2]"));
+        WebElement childElement = driver.findElement(By.xpath("(//a[text()='Transportation'])[2]"));
 
         Actions action = new Actions(driver);
         action.moveToElement(parentElement);
         action.perform();
-        action.click(driver.findElement(By.xpath("(//a[text()='Transportation'])[2]")));
+        action.click(childElement);
         action.perform();
         action.release();
 

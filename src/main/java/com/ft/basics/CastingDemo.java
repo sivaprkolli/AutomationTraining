@@ -15,5 +15,10 @@ public class CastingDemo {
         Child c = (Child) p1; // down casting
         c.demo();
         c.demo1();
+
+        Parent p2 =  new Child(); // up casting
+        Child c2 = (Child) p2; // down casting
+
+
     }
 }
