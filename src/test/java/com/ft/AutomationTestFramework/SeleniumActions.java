@@ -1,4 +1,4 @@
-package com.ft.seleniumExamples;
+package com.ft.AutomationTestFramework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 
 public class SeleniumActions {
 
-    WebDriver driver;
+    private WebDriver driver;
+
+    public SeleniumActions(WebDriver driver){
+        this.driver = driver;
+    }
 
     public String getTextMessage(WebElement element){
         return element.getText();
@@ -15,7 +19,6 @@ public class SeleniumActions {
     public String getTextMessage(By by){
         return driver.findElement(by).getText();
     }
-
 
     public void clickOnElement(WebElement element){
         element.click();
