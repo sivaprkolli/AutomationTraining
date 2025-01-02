@@ -45,4 +45,22 @@ public class HandleTablesData extends BaseSelenium{
         Assert.assertEquals(firstROwData, expectedData);
 
     }
+
+    @Test
+    public void getDataInTheTable() {
+        driver.get("https://the-internet.herokuapp.com/tables");
+
+        List<WebElement> rowElements = driver.findElements(By.xpath("//table[@id=\"table1\"]/tbody/tr[1]/td"));
+        List<String> rowElementsData = new ArrayList<>();
+
+        for (int i=0; i< rowElements.size(); i++){
+            rowElementsData.add(getRowData("Smith").get(i).getText());
+        }
+
+        System.out.println("rowElementsData :: "  +rowElementsData);
+    }
+
+    public List<WebElement> getRowData(String user){
+        return driver.findElements(By.xpath("//table[@id=\"table1\"]/tbody/tr/td[text()='"+user+"']/../td"));
+    }
 }
