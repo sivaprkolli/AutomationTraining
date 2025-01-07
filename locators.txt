@@ -111,6 +111,11 @@ label[for^='UserLastName'] + span
 not function in xpath:
 //table[@id='table1']/tbody/tr[1]/td[not(a)]
 
+name() function in xpath:
+//a[@href="/settings"]/div/div/*[name()='svg']
+//a[@href="/settings"]/div/div/*[local-name()='svg']
+//a[@href="/settings"]/div/div/*[local-name()='svg']/*[name()='g']/*[name()='path']
+
 Tables example:
 
 //table[@id="table1"]/thead/tr/th
