@@ -25,7 +25,7 @@ public class UploadFileExample extends BaseSelenium{
     }
 
     @Test
-    public void uploadFileUsingRobotClass() throws AWTException {
+    public void uploadFileUsingRobotClass() throws AWTException, InterruptedException {
         driver.get("https://the-internet.herokuapp.com/upload");
         WebElement chooseFileButton = driver.findElement(By.cssSelector("[id=\"drag-drop-upload\"]"));
        chooseFileButton.click();
@@ -35,10 +35,16 @@ public class UploadFileExample extends BaseSelenium{
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(file, null);
 
         robot.keyPress(KeyEvent.VK_CONTROL);
+        Thread.sleep(5000);
         robot.keyPress(KeyEvent.VK_V);
+        Thread.sleep(1000);
         robot.keyRelease(KeyEvent.VK_V);
+        Thread.sleep(2000);
         robot.keyRelease(KeyEvent.VK_CONTROL);
+        Thread.sleep(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(1000);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(7000);
     }
 }
