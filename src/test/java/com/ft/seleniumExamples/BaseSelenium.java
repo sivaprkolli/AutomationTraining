@@ -20,13 +20,25 @@ import java.util.HashMap;
 public class BaseSelenium {
     public WebDriver driver;
 
-    @BeforeSuite
+    //@BeforeSuite
     public void launchBrowser(){
         ChromeOptions chromeOptions = new ChromeOptions();
         HashMap<String, String> map = new HashMap<>();
         map.put("download.default_directory", System.getProperty("user.dir")+"/downloads");
         chromeOptions.setExperimentalOption("prefs", map);
         driver  = new ChromeDriver(chromeOptions);
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    }
+
+    @BeforeSuite
+    public void launchBrowser1(){
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("download.default_directory", System.getProperty("user.dir")+"/downloads");
+//        chromeOptions.setExperimentalOption("prefs", map);
+        driver  = new FirefoxDriver();
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

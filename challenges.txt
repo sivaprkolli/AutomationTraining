@@ -1,0 +1,6 @@
+1. Handling extensions
+2. Image comparison
+3. QR Code - reading
+4. PDF reading
+5. Image Reading
+6.
