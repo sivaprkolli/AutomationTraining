@@ -14,3 +14,6 @@ NoSuchWindowException: Browsing context has been discarded
 ElementClickInterceptedException
 ElementNotInteractableException
 NoSuchFrameException: No frame element found by name or id frame-bottom
+
+StaleElementReferenceException:
+org.openqa.selenium.StaleElementReferenceException: The element with the reference df9f0f4b-4420-4fe2-abd9-a7f70d574c3a is stale; either its node document is not the active document, or it is no longer connected to the DOM
