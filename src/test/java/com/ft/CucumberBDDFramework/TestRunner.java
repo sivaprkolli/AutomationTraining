@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com/ft/CucumberBDDFramework",
-        plugin = "pretty"
+        plugin = "pretty",
+        tags = "@LT3"
         //dryRun = true
        // monochrome = true
 )
