@@ -8,7 +8,6 @@ Feature: Login Tests
     Then User verify products page
     And User verify single product
 
-
   @LT2 @Login @Smoke
   Scenario Outline: Verify successful login with examples
     Given User on login page
@@ -32,8 +31,7 @@ Feature: Login Tests
     And User click on submit
     Then User verify products page
     And User verify single product
-
-
+    
   @LT4 @Login @Smoke
   Scenario: Verify successful login with data table with header
     Given User on login page
